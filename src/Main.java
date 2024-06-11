@@ -14,7 +14,12 @@ public class Main {
         System.out.println("Task 3");
 
         int deliveryDistance = 95;
-        countDeliveryDays(deliveryDistance);
+        if (deliveryDistance <= 100) {
+        System.out.println("Потребуется дней: " + countDeliveryDays(deliveryDistance));
+        }
+        else {
+            System.out.println("Доставка не осуществляется");
+        }
     }
 
     public static void isYearLeap(int year) {
@@ -37,15 +42,13 @@ public class Main {
         }
     }
 
-    public static void countDeliveryDays(int deliveryDistance) {
+    public static int countDeliveryDays(int deliveryDistance) {
         if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: " + 1);
+            return 1;
         } else if (deliveryDistance <= 60) {
-            System.out.println("Потребуется дней: " + 2);
-        } else if (deliveryDistance <= 100) {
-            System.out.println("Потребуется дней: " + 3);
-        } else {
-            System.out.println("Доставка не осуществляется");
+            return 2;
+        } else  {
+            return 3;
         }
     }
 }
